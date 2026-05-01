@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join Tournament – Traveller Tweet</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"/>
+</head>
+<body class="fade-in join-page">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="header-logo.jpg" alt="Traveller Tweet Logo" class="logo-img"/>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html#about"    data-en="About"    data-ar="عن البطولة">About</a>
+        <a href="index.html#schedule" data-en="Schedule" data-ar="الجدول">Schedule</a>
+        <a href="index.html#prizes"   data-en="Prizes"   data-ar="الجوائز">Prizes</a>
+        <a href="index.html#faq"      data-en="FAQ"      data-ar="الأسئلة">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <button class="lang-btn" id="langBtn" onclick="toggleLang()">عربي</button>
+        <a href="index.html" class="btn-ghost-sm" data-en="← Back" data-ar="→ رجوع">← Back</a>
+      </div>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html#about"    data-en="About"    data-ar="عن البطولة">About</a>
+      <a href="index.html#schedule" data-en="Schedule" data-ar="الجدول">Schedule</a>
+      <a href="index.html#prizes"   data-en="Prizes"   data-ar="الجوائز">Prizes</a>
+      <a href="index.html"          data-en="← Home"   data-ar="→ الرئيسية">← Home</a>
+    </div>
+  </header>
+
+  <!-- JOIN HERO -->
+  <div class="join-hero">
+    <div class="chess-bg-light"></div>
+    <div class="join-hero-content">
+      <div class="hero-badge" data-en="♟ Tournament Registration" data-ar="♟ تسجيل البطولة">♟ Tournament Registration</div>
+      <h1 data-en="Claim Your Seat at the Board" data-ar="احجز مقعدك على الرقعة">Claim Your Seat at the Board</h1>
+      <p data-en="Complete the form below to officially register. Your journey to the championship starts now." data-ar="أكمل النموذج أدناه للتسجيل الرسمي. رحلتك نحو البطولة تبدأ الآن.">Complete the form below to officially register. Your journey to the championship starts now.</p>
+    </div>
+  </div>
+
+  <!-- FORM SECTION -->
+  <section class="form-section">
+    <div class="form-container">
+
+      <!-- Payment Box -->
+      <div class="payment-box">
+        <div class="payment-icon">📱</div>
+        <div class="payment-info">
+          <p class="payment-label" data-en="Send payment via Vodafone Cash to:" data-ar="أرسل الدفع عبر فودافون كاش إلى:">Send payment via Vodafone Cash to:</p>
+          <p class="payment-number">+20 10 60789814</p>
+        </div>
+        <div class="payment-badge">
+          <span class="vf-dot"></span>
+          <span data-en="Vodafone Cash" data-ar="فودافون كاش">Vodafone Cash</span>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="reg-form" id="regForm">
+        <h2 data-en="Your Details" data-ar="بياناتك">Your Details</h2>
+
+        <div class="form-group">
+          <label for="fullName" data-en="Full Name *" data-ar="الاسم الكامل *">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Ahmed Mohamed" required/>
+          <span class="err-msg" data-en="Full name is required." data-ar="الاسم الكامل مطلوب.">Full name is required.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="chessId" data-en="Chess ID (optional)" data-ar="رقم الشطرنج (اختياري)">Chess ID (optional)</label>
+          <input type="text" id="chessId" name="chessId" placeholder="e.g. 12345678"/>
+        </div>
+
+        <div class="form-group">
+          <label for="dob" data-en="Date of Birth *" data-ar="تاريخ الميلاد *">Date of Birth *</label>
+          <input type="date" id="dob" name="dob" required/>
+          <span class="err-msg" data-en="Date of birth is required." data-ar="تاريخ الميلاد مطلوب.">Date of birth is required.</span>
+        </div>
+
+        <div class="form-group">
+          <label data-en="Payment Screenshot *" data-ar="لقطة شاشة الدفع *">Payment Screenshot *</label>
+          <div class="upload-area" id="uploadArea" onclick="document.getElementById('paymentFile').click()">
+            <div class="upload-icon">📎</div>
+            <p class="upload-text" data-en="Click to upload or drag & drop" data-ar="اضغط للرفع أو اسحب وأفلت">Click to upload or drag & drop</p>
+            <p class="upload-sub" data-en="PNG, JPG or PDF up to 5MB" data-ar="PNG، JPG أو PDF حتى 5MB">PNG, JPG or PDF up to 5MB</p>
+            <p class="file-name" id="fileName"></p>
+          </div>
+          <input type="file" id="paymentFile" name="paymentFile" accept="image/*,.pdf" style="display:none" onchange="handleFile(this)"/>
+          <span class="err-msg" id="fileErr" data-en="Payment screenshot is required." data-ar="لقطة الدفع مطلوبة.">Payment screenshot is required.</span>
+        </div>
+
+        <button class="btn-primary btn-lg btn-submit" onclick="submitForm(event)" data-en="Submit Registration →" data-ar="أرسل التسجيل →">Submit Registration →</button>
+      </div>
+
+      <!-- Success -->
+      <div class="success-card" id="successCard" style="display:none">
+        <div class="success-icon">♟</div>
+        <h2 data-en="You're Registered!" data-ar="تم تسجيلك!">You're Registered!</h2>
+        <p data-en="We've received your application. You'll be contacted shortly with confirmation details. Good luck!" data-ar="استلمنا طلبك. سيتم التواصل معك قريبًا بتفاصيل التأكيد. حظًا موفقًا!">
+          We've received your application. You'll be contacted shortly with confirmation details. Good luck!
+        </p>
+        <a href="index.html" class="btn-primary" data-en="Back to Home" data-ar="العودة للرئيسية">Back to Home</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="header-logo.jpg" alt="Traveller Tweet" class="footer-logo"/>
+      <p data-en="© 2025 Traveller Tweet. All rights reserved." data-ar="© 2025 Traveller Tweet. جميع الحقوق محفوظة.">© 2025 Traveller Tweet. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Drag & drop
+    const uploadArea = document.getElementById('uploadArea');
+    uploadArea.addEventListener('dragover', e => { e.preventDefault(); uploadArea.classList.add('drag-over'); });
+    uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('drag-over'));
+    uploadArea.addEventListener('drop', e => {
+      e.preventDefault();
+      uploadArea.classList.remove('drag-over');
+      const file = e.dataTransfer.files[0];
+      if (file) {
+        document.getElementById('paymentFile').files = e.dataTransfer.files;
+        showFileName(file.name);
+      }
+    });
+
+    function handleFile(input) {
+      if (input.files[0]) showFileName(input.files[0].name);
+    }
+    function showFileName(name) {
+      const fn = document.getElementById('fileName');
+      fn.textContent = '✓ ' + name;
+      fn.style.color = 'var(--green)';
+      document.getElementById('uploadArea').classList.add('has-file');
+      document.getElementById('fileErr').style.display = 'none';
+    }
+
+    function submitForm(e) {
+      e.preventDefault();
+      let valid = true;
+      const name = document.getElementById('fullName');
+      const dob  = document.getElementById('dob');
+      const file = document.getElementById('paymentFile');
+
+      // Reset
+      document.querySelectorAll('.err-msg').forEach(m => m.style.display = 'none');
+      document.querySelectorAll('input').forEach(i => i.classList.remove('input-err'));
+
+      if (!name.value.trim()) {
+        name.classList.add('input-err');
+        name.nextElementSibling.style.display = 'block';
+        valid = false;
+      }
+      if (!dob.value) {
+        dob.classList.add('input-err');
+        dob.nextElementSibling.style.display = 'block';
+        valid = false;
+      }
+      if (!file.files[0]) {
+        document.getElementById('fileErr').style.display = 'block';
+        valid = false;
+      }
+
+      if (valid) {
+        document.getElementById('regForm').style.display = 'none';
+        document.getElementById('successCard').style.display = 'flex';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  </script>
+</body>
+</html>
