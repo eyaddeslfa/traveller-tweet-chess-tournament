@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join Tournament – Traveller Tweet</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"/>
+</head>
+<body class="fade-in join-page">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="header-logo.jpg" alt="Traveller Tweet Logo" class="logo-img"/>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html#about"    data-i18n="about">About</a>
+        <a href="index.html#schedule" data-i18n="schedule">Schedule</a>
+        <a href="index.html#prizes"   data-i18n="prizes">Prizes</a>
+        <a href="index.html#faq"      data-i18n="faq">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <button class="lang-btn" id="langBtn" onclick="toggleLang()">عربي</button>
+        <a href="index.html" class="btn-ghost-sm" data-i18n="back">← Back</a>
+      </div>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html#about"    data-i18n="about">About</a>
+      <a href="index.html#schedule" data-i18n="schedule">Schedule</a>
+      <a href="index.html#prizes"   data-i18n="prizes">Prizes</a>
+      <a href="index.html"          data-i18n="backHome">← Home</a>
+    </div>
+  </header>
+
+  <!-- JOIN HERO -->
+  <div class="join-hero">
+    <div class="chess-bg-light"></div>
+    <div class="join-hero-content">
+      <div class="hero-badge" data-i18n="joinBadge">♟ Tournament Registration</div>
+      <h1 data-i18n="joinTitle">Claim Your Seat at the Board</h1>
+      <p data-i18n="joinSub">Complete the form below to officially register. Your journey to the championship starts now.</p>
+    </div>
+  </div>
+
+  <!-- FORM SECTION -->
+  <section class="form-section">
+    <div class="form-container">
+
+      <!-- Payment Box -->
+      <div class="payment-box">
+        <div class="payment-icon">📱</div>
+        <div class="payment-info">
+          <p class="payment-label" data-i18n="paymentLabel">Send payment via Vodafone Cash to:</p>
+          <p class="payment-number" dir="ltr">+20 10 60789814</p>
+        </div>
+        <div class="payment-badge">
+          <span class="vf-dot"></span>
+          <span data-i18n="vodafoneCash">Vodafone Cash</span>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="reg-form" id="regForm">
+        <h2 data-i18n="yourDetails">Your Details</h2>
+
+        <div class="form-group">
+          <label for="fullName" data-i18n="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="fullName"
+                 data-i18n-placeholder="namePlaceholder" placeholder="Ahmed Mohamed" required/>
+          <span class="err-msg" id="nameErr" data-i18n="nameErr">Full name is required.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="chessId" data-i18n="chessId">Chess ID (optional)</label>
+          <input type="text" id="chessId" name="chessId"
+                 data-i18n-placeholder="chessIdPlaceholder" placeholder="e.g. 12345678"/>
+        </div>
+
+        <div class="form-group">
+          <label for="dob" data-i18n="dob">Date of Birth *</label>
+          <input type="date" id="dob" name="dob" required/>
+          <span class="err-msg" id="dobErr" data-i18n="dobErr">Date of birth is required.</span>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="paymentShot">Payment Screenshot *</label>
+          <div class="upload-area" id="uploadArea"
+               onclick="document.getElementById('paymentFile').click()">
+            <div class="upload-icon">📎</div>
+            <p class="upload-text" data-i18n="uploadText">Click to upload or drag & drop</p>
+            <p class="upload-sub"  data-i18n="uploadSub">PNG, JPG or PDF up to 5MB</p>
+            <p class="file-name"   id="fileName"></p>
+          </div>
+          <input type="file" id="paymentFile" name="paymentFile" accept="image/*,.pdf"
+                 style="display:none" onchange="handleFile(this)"/>
+          <span class="err-msg" id="fileErr" data-i18n="fileErr">Payment screenshot is required.</span>
+        </div>
+
+        <!-- Submit button shows spinner while uploading -->
+        <button class="btn-primary btn-lg btn-submit" id="submitBtn"
+                onclick="submitForm(event)" data-i18n="submitBtn">
+          Submit Registration →
+        </button>
+
+        <!-- Inline status message -->
+        <p id="statusMsg" style="display:none; margin-top:1rem; font-weight:600;
+           text-align:center; color:var(--green, #2ecc71);"></p>
+      </div>
+
+      <!-- Success card -->
+      <div class="success-card" id="successCard" style="display:none">
+        <div class="success-icon">♟</div>
+        <h2 data-i18n="successTitle">You're Registered!</h2>
+        <p data-i18n="successMsg">
+          We've received your application. You'll be contacted shortly with confirmation details. Good luck!
+        </p>
+        <a href="index.html" class="btn-primary" data-i18n="backToHome">Back to Home</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="header-logo.jpg" alt="Traveller Tweet" class="footer-logo"/>
+      <p data-i18n="copyright">© 2025 Traveller Tweet. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       MAIN SCRIPTS
+  ════════════════════════════════════════════════════════════ -->
+  <script type="module" src="script.js"></script>
+
+  <script>
+  // ── ① Google Apps Script Web App URL ──────────────────────────
+  //     Paste your deployed Web App URL here after setup:
+  const GOOGLE_SCRIPT_URL = "";
+
+  // ── ② i18n strings ────────────────────────────────────────────
+  const i18n = {
+    en: {
+      about:           "About",
+      schedule:        "Schedule",
+      prizes:          "Prizes",
+      faq:             "FAQ",
+      back:            "← Back",
+      backHome:        "← Home",
+      joinBadge:       "♟ Tournament Registration",
+      joinTitle:       "Claim Your Seat at the Board",
+      joinSub:         "Complete the form below to officially register. Your journey to the championship starts now.",
+      paymentLabel:    "Send payment via Vodafone Cash to:",
+      vodafoneCash:    "Vodafone Cash",
+      yourDetails:     "Your Details",
+      fullName:        "Full Name *",
+      namePlaceholder: "Ahmed Mohamed",
+      chessId:         "Chess ID (optional)",
+      chessIdPlaceholder: "e.g. 12345678",
+      dob:             "Date of Birth *",
+      paymentShot:     "Payment Screenshot *",
+      uploadText:      "Click to upload or drag & drop",
+      uploadSub:       "PNG, JPG or PDF up to 5MB",
+      submitBtn:       "Submit Registration →",
+      nameErr:         "Full name is required.",
+      dobErr:          "Date of birth is required.",
+      fileErr:         "Payment screenshot is required.",
+      successTitle:    "You're Registered!",
+      successMsg:      "We've received your application. You'll be contacted shortly with confirmation details. Good luck!",
+      backToHome:      "Back to Home",
+      copyright:       "© 2025 Traveller Tweet. All rights reserved.",
+      sending:         "Sending… please wait",
+      errorGeneric:    "Something went wrong. Please try again.",
+      successStatus:   "✓ Your registration and screenshot were received successfully!",
+    },
+    ar: {
+      about:           "عن البطولة",
+      schedule:        "الجدول",
+      prizes:          "الجوائز",
+      faq:             "الأسئلة الشائعة",
+      back:            "→ رجوع",
+      backHome:        "→ الرئيسية",
+      joinBadge:       "♟ تسجيل البطولة",
+      joinTitle:       "احجز مقعدك على الرقعة",
+      joinSub:         "أكمل النموذج التالي للتسجيل الرسمي. رحلتك نحو البطولة تبدأ الآن.",
+      paymentLabel:    "أرسل الدفع عبر فودافون كاش إلى:",
+      vodafoneCash:    "فودافون كاش",
+      yourDetails:     "بياناتك",
+      fullName:        "الاسم الكامل *",
+      namePlaceholder: "أحمد محمد",
+      chessId:         "معرّف الشطرنج (اختياري)",
+      chessIdPlaceholder: "مثال: 12345678",
+      dob:             "تاريخ الميلاد *",
+      paymentShot:     "سكرين شوت الدفع *",
+      uploadText:      "انقر للرفع أو اسحب الملف هنا",
+      uploadSub:       "PNG أو JPG أو PDF حتى 5 ميجا",
+      submitBtn:       "إرسال التسجيل ←",
+      nameErr:         "الاسم الكامل مطلوب.",
+      dobErr:          "تاريخ الميلاد مطلوب.",
+      fileErr:         "سكرين شوت الدفع مطلوب.",
+      successTitle:    "تم تسجيلك!",
+      successMsg:      "استلمنا طلبك وسكرين شوت الدفع بنجاح. سيتم التواصل معك قريباً. حظاً موفقاً!",
+      backToHome:      "العودة للرئيسية",
+      copyright:       "© 2025 Traveller Tweet. جميع الحقوق محفوظة.",
+      sending:         "جاري الإرسال… يرجى الانتظار",
+      errorGeneric:    "حدث خطأ، يرجى المحاولة مرة أخرى.",
+      successStatus:   "✓ تم استلام بياناتك وسكرين الشوت بنجاح!",
+    }
+  };
+
+  let currentLang = localStorage.getItem("lang") || "en";
+
+  function applyLang(lang) {
+    currentLang = lang;
+    localStorage.setItem("lang", lang);
+
+    const isAr = lang === "ar";
+    document.documentElement.lang = lang;
+    document.documentElement.dir  = isAr ? "rtl" : "ltr";
+    document.body.style.fontFamily = isAr
+      ? "'Cairo', sans-serif"
+      : "'DM Sans', sans-serif";
+
+    // Text nodes
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (i18n[lang][key] !== undefined) el.textContent = i18n[lang][key];
+    });
+
+    // Placeholders
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+      const key = el.getAttribute("data-i18n-placeholder");
+      if (i18n[lang][key] !== undefined) el.placeholder = i18n[lang][key];
+    });
+
+    // Lang button label
+    document.getElementById("langBtn").textContent = isAr ? "English" : "عربي";
+  }
+
+  function toggleLang() {
+    applyLang(currentLang === "en" ? "ar" : "en");
+  }
+
+  // Apply on page load
+  applyLang(currentLang);
+
+
+  // ── ③ Drag & Drop ─────────────────────────────────────────────
+  const uploadArea = document.getElementById("uploadArea");
+
+  uploadArea.addEventListener("dragover", e => {
+    e.preventDefault();
+    uploadArea.classList.add("drag-over");
+  });
+  uploadArea.addEventListener("dragleave", () => {
+    uploadArea.classList.remove("drag-over");
+  });
+  uploadArea.addEventListener("drop", e => {
+    e.preventDefault();
+    uploadArea.classList.remove("drag-over");
+    const file = e.dataTransfer.files[0];
+    if (file) {
+      document.getElementById("paymentFile").files = e.dataTransfer.files;
+      showFileName(file.name);
+    }
+  });
+
+  function handleFile(input) {
+    if (input.files[0]) showFileName(input.files[0].name);
+  }
+
+  function showFileName(name) {
+    const fn = document.getElementById("fileName");
+    fn.textContent = "✓ " + name;
+    fn.style.color = "var(--green, #2ecc71)";
+    uploadArea.classList.add("has-file");
+    document.getElementById("fileErr").style.display = "none";
+  }
+
+
+  // ── ④ Convert file → base64 ───────────────────────────────────
+  function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload  = () => resolve(reader.result); // full data-URL
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
+
+
+  // ── ⑤ Form submission with fetch → Google Apps Script ─────────
+  async function submitForm(e) {
+    e.preventDefault();
+
+    const nameInput = document.getElementById("fullName");
+    const dobInput  = document.getElementById("dob");
+    const fileInput = document.getElementById("paymentFile");
+    const submitBtn = document.getElementById("submitBtn");
+    const statusMsg = document.getElementById("statusMsg");
+    const t         = i18n[currentLang];
+
+    // Reset errors
+    document.querySelectorAll(".err-msg").forEach(m => m.style.display = "none");
+    document.querySelectorAll("input").forEach(i => i.classList.remove("input-err"));
+    statusMsg.style.display = "none";
+
+    let valid = true;
+
+    if (!nameInput.value.trim()) {
+      nameInput.classList.add("input-err");
+      document.getElementById("nameErr").style.display = "block";
+      valid = false;
+    }
+    if (!dobInput.value) {
+      dobInput.classList.add("input-err");
+      document.getElementById("dobErr").style.display = "block";
+      valid = false;
+    }
+    if (!fileInput.files[0]) {
+      document.getElementById("fileErr").style.display = "block";
+      valid = false;
+    }
+    if (!valid) return;
+
+    // ── If no script URL, fall back to local success only ────────
+    if (!GOOGLE_SCRIPT_URL) {
+      console.warn("GOOGLE_SCRIPT_URL is empty – showing success without saving.");
+      showSuccess();
+      return;
+    }
+
+    // ── Disable button & show loading state ───────────────────────
+    submitBtn.disabled = true;
+    submitBtn.textContent = t.sending;
+
+    try {
+      // Convert screenshot to base64
+      const file         = fileInput.files[0];
+      const base64String = await fileToBase64(file);
+
+      const payload = {
+        fullName:   nameInput.value.trim(),
+        chessId:    document.getElementById("chessId").value.trim(),
+        dob:        dobInput.value,
+        fileBase64: base64String,          // full data-URL; GAS strips prefix
+        fileName:   file.name,
+        mimeType:   file.type || "image/jpeg",
+      };
+
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method:  "POST",
+        // Google Apps Script requires text/plain for no-CORS cross-origin POST
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body:    JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        showSuccess();
+      } else {
+        throw new Error(result.message || t.errorGeneric);
+      }
+
+    } catch (err) {
+      console.error("Submission error:", err);
+      statusMsg.textContent    = i18n[currentLang].errorGeneric;
+      statusMsg.style.color    = "#e74c3c";
+      statusMsg.style.display  = "block";
+      submitBtn.disabled       = false;
+      submitBtn.textContent    = i18n[currentLang].submitBtn;
+    }
+  }
+
+  function showSuccess() {
+    document.getElementById("regForm").style.display     = "none";
+    document.getElementById("successCard").style.display = "flex";
+
+    // Re-apply translations to success card in case lang is Arabic
+    applyLang(currentLang);
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  </script>
+</body>
+</html>
