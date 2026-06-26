@@ -16,25 +16,27 @@
         <img src="header-logo.jpg" alt="Traveller Tweet Logo" class="logo-img"/>
       </a>
       <nav class="main-nav">
-        <a href="#about"    data-en="About"        data-ar="عن البطولة">About</a>
-        <a href="#schedule" data-en="Schedule"     data-ar="الجدول">Schedule</a>
-        <a href="#prizes"   data-en="Prizes"       data-ar="الجوائز">Prizes</a>
-        <a href="#faq"      data-en="FAQ"          data-ar="الأسئلة">FAQ</a>
+        <a href="#about"    data-i18n="about">About</a>
+        <a href="#schedule" data-i18n="schedule">Schedule</a>
+        <a href="#prizes"   data-i18n="prizes">Prizes</a>
+        <a href="#faq"      data-i18n="faq">FAQ</a>
+        <a href="#contact"  data-i18n="contactLabel">Get in Touch</a>
       </nav>
       <div class="header-actions">
         <button class="lang-btn" id="langBtn" onclick="toggleLang()">عربي</button>
-        <a href="join.html" class="btn-primary" data-en="Join Tournament" data-ar="انضم للبطولة">Join Tournament</a>
+        <a href="join.html" class="btn-primary" data-i18n="joinTournament">Join Tournament</a>
       </div>
       <button class="hamburger" id="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#about"    data-en="About"        data-ar="عن البطولة">About</a>
-      <a href="#schedule" data-en="Schedule"     data-ar="الجدول">Schedule</a>
-      <a href="#prizes"   data-en="Prizes"       data-ar="الجوائز">Prizes</a>
-      <a href="#faq"      data-en="FAQ"          data-ar="الأسئلة">FAQ</a>
-      <a href="join.html" class="btn-primary mobile-cta" data-en="Join Tournament" data-ar="انضم للبطولة">Join Tournament</a>
+      <a href="#about"    data-i18n="about">About</a>
+      <a href="#schedule" data-i18n="schedule">Schedule</a>
+      <a href="#prizes"   data-i18n="prizes">Prizes</a>
+      <a href="#faq"      data-i18n="faq">FAQ</a>
+      <a href="#contact"  data-i18n="contactLabel">Get in Touch</a>
+      <a href="join.html" class="btn-primary mobile-cta" data-i18n="joinTournament">Join Tournament</a>
     </div>
   </header>
 
@@ -42,25 +44,20 @@
   <section class="hero">
     <div class="chess-bg"></div>
     <div class="hero-content">
-      <div class="hero-badge" data-en="🏆 Open Registration" data-ar="🏆 التسجيل مفتوح">🏆 Open Registration</div>
+      <div class="hero-badge" data-i18n="heroBadge">🏆 Open Registration</div>
       <h1 class="hero-title">
-        <span class="gradient-text" data-en="One move can" data-ar="حركة واحدة">One move can</span><br/>
-        <span class="hero-accent" data-en="change everything." data-ar="ممكن تغيّر كل حاجة">change everything.</span>
+        <span class="gradient-text" data-i18n="heroLine1">One move can</span><br/>
+        <span class="hero-accent" data-i18n="heroLine2">change everything.</span>
       </h1>
-      <p class="hero-sub" data-en="Join the Traveller Tweet Chess Tournament and prove your mastery on the board. Compete. Conquer. Ascend." data-ar="انضم لبطولة Traveller Tweet للشطرنج وأثبت تفوقك على الرقعة. نافس. تغلب. ارتقِ.">
+      <p class="hero-sub" data-i18n="heroSub">
         Join the Traveller Tweet Chess Tournament and prove your mastery on the board. Compete. Conquer. Ascend.
       </p>
       <div class="hero-btns">
-        <a href="join.html" class="btn-primary btn-lg" data-en="Join Tournament" data-ar="انضم للبطولة">Join Tournament</a>
-        <a href="#about" class="btn-ghost" data-en="Learn More" data-ar="اعرف أكتر">Learn More</a>
+        <a href="join.html" class="btn-primary btn-lg" data-i18n="joinTournament">Join Tournament</a>
+        <a href="#about" class="btn-ghost" data-i18n="learnMore">Learn More</a>
       </div>
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-num">200+</span><span class="stat-lbl" data-en="Players" data-ar="لاعبين">Players</span></div>
-        <div class="stat-div"></div>
-        <div class="stat"><span class="stat-num">12</span><span class="stat-lbl" data-en="Rounds" data-ar="جولات">Rounds</span></div>
-        <div class="stat-div"></div>
-        <div class="stat"><span class="stat-num">EGP 5K</span><span class="stat-lbl" data-en="Prize Pool" data-ar="جائزة كبرى">Prize Pool</span></div>
-      </div>
+      <!-- Stats rendered by script.js from siteData -->
+      <div class="hero-stats" id="heroStats"></div>
     </div>
     <div class="hero-board">
       <div class="board-wrap">
@@ -75,23 +72,23 @@
   <!-- ===== ABOUT ===== -->
   <section class="about section" id="about">
     <div class="container">
-      <div class="section-label" data-en="About the Tournament" data-ar="عن البطولة">About the Tournament</div>
-      <h2 data-en="Where Strategy Meets Passion" data-ar="حيث تلتقي الاستراتيجية بالشغف">Where Strategy Meets Passion</h2>
+      <div class="section-label" data-i18n="aboutLabel">About the Tournament</div>
+      <h2 data-i18n="aboutTitle">Where Strategy Meets Passion</h2>
       <div class="about-grid">
         <div class="about-card">
           <div class="about-icon">♟</div>
-          <h3 data-en="Swiss System" data-ar="نظام سويسري">Swiss System</h3>
-          <p data-en="Fair, competitive rounds using the internationally recognized Swiss pairing system." data-ar="جولات عادلة وتنافسية باستخدام نظام التزاوج السويسري المعترف به دوليًا.">Fair, competitive rounds using the internationally recognized Swiss pairing system.</p>
+          <h3 data-i18n="card1Title">Swiss System</h3>
+          <p data-i18n="card1Desc">Fair, competitive rounds using the internationally recognized Swiss pairing system.</p>
         </div>
         <div class="about-card">
           <div class="about-icon">🌐</div>
-          <h3 data-en="Open to All" data-ar="مفتوح للجميع">Open to All</h3>
-          <p data-en="Whether you're a beginner or seasoned player, all skill levels are welcome to compete." data-ar="سواء كنت مبتدئًا أو لاعبًا محترفًا، جميع المستويات مرحب بها.">Whether you're a beginner or seasoned player, all skill levels are welcome to compete.</p>
+          <h3 data-i18n="card2Title">Open to All</h3>
+          <p data-i18n="card2Desc">Whether you're a beginner or seasoned player, all skill levels are welcome to compete.</p>
         </div>
         <div class="about-card">
           <div class="about-icon">🏅</div>
-          <h3 data-en="Rated & Ranked" data-ar="مصنّف ومرتّب">Rated & Ranked</h3>
-          <p data-en="Games are officially rated, boosting your international chess profile and ranking." data-ar="الألعاب مصنّفة رسميًا مما يعزز ملفك الدولي في الشطرنج.">Games are officially rated, boosting your international chess profile and ranking.</p>
+          <h3 data-i18n="card3Title">Rated & Ranked</h3>
+          <p data-i18n="card3Desc">Games are officially rated, boosting your international chess profile and ranking.</p>
         </div>
       </div>
     </div>
@@ -100,111 +97,87 @@
   <!-- ===== SCHEDULE ===== -->
   <section class="schedule section alt-bg" id="schedule">
     <div class="container">
-      <div class="section-label" data-en="Tournament Schedule" data-ar="جدول البطولة">Tournament Schedule</div>
-      <h2 data-en="Mark Your Calendar" data-ar="ضع علامة في تقويمك">Mark Your Calendar</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="t-date">June 1</div>
-          <div class="t-dot"></div>
-          <div class="t-info">
-            <h4 data-en="Registration Opens" data-ar="فتح التسجيل">Registration Opens</h4>
-            <p data-en="Sign up and submit your payment to secure your spot." data-ar="سجل وادفع رسوم المشاركة لتأمين مكانك.">Sign up and submit your payment to secure your spot.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="t-date">June 20</div>
-          <div class="t-dot"></div>
-          <div class="t-info">
-            <h4 data-en="Registration Closes" data-ar="إغلاق التسجيل">Registration Closes</h4>
-            <p data-en="Last chance to register. No late entries accepted." data-ar="آخر فرصة للتسجيل. لا يُقبل التسجيل المتأخر.">Last chance to register. No late entries accepted.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="t-date">July 5</div>
-          <div class="t-dot"></div>
-          <div class="t-info">
-            <h4 data-en="Tournament Begins" data-ar="انطلاق البطولة">Tournament Begins</h4>
-            <p data-en="Round 1 kicks off – may the best player win!" data-ar="انطلاق الجولة الأولى – فليفز الأفضل!">Round 1 kicks off – may the best player win!</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="t-date">July 12</div>
-          <div class="t-dot"></div>
-          <div class="t-info">
-            <h4 data-en="Grand Final & Awards" data-ar="النهائي الكبير والجوائز">Grand Final & Awards</h4>
-            <p data-en="Champions crowned, prizes awarded, legends made." data-ar="تتويج الأبطال وتسليم الجوائز وصناعة الأساطير.">Champions crowned, prizes awarded, legends made.</p>
-          </div>
-        </div>
-      </div>
+      <div class="section-label" data-i18n="scheduleLabel">Tournament Schedule</div>
+      <h2 data-i18n="scheduleTitle">Mark Your Calendar</h2>
+      <!-- Rendered by script.js from siteData.schedule -->
+      <div class="timeline" id="timelineList"></div>
     </div>
   </section>
 
   <!-- ===== PRIZES ===== -->
   <section class="prizes section" id="prizes">
     <div class="container">
-      <div class="section-label" data-en="Prizes & Rewards" data-ar="الجوائز والمكافآت">Prizes & Rewards</div>
-      <h2 data-en="Win Big. Play Bold." data-ar="افوز كبير. العب بجرأة.">Win Big. Play Bold.</h2>
-      <div class="prizes-grid">
-        <div class="prize-card silver">
-          <div class="prize-rank">2<sup>nd</sup></div>
-          <div class="prize-icon">🥈</div>
-          <div class="prize-name" data-en="Runner-Up" data-ar="المركز الثاني">Runner-Up</div>
-          <div class="prize-amt">EGP 1,500</div>
-          <p data-en="+ Silver Medal + Certificate" data-ar="+ ميدالية فضية + شهادة">+ Silver Medal + Certificate</p>
-        </div>
-        <div class="prize-card gold">
-          <div class="prize-crown">👑</div>
-          <div class="prize-rank">1<sup>st</sup></div>
-          <div class="prize-icon">🥇</div>
-          <div class="prize-name" data-en="Champion" data-ar="البطل">Champion</div>
-          <div class="prize-amt">EGP 3,000</div>
-          <p data-en="+ Trophy + Certificate + Title" data-ar="+ كأس + شهادة + لقب">+ Trophy + Certificate + Title</p>
-        </div>
-        <div class="prize-card bronze">
-          <div class="prize-rank">3<sup>rd</sup></div>
-          <div class="prize-icon">🥉</div>
-          <div class="prize-name" data-en="Third Place" data-ar="المركز الثالث">Third Place</div>
-          <div class="prize-amt">EGP 200</div>
-          <p data-en="+ Bronze Medal + Certificate" data-ar="+ ميدالية برونزية + شهادة">+ Bronze Medal + Certificate</p>
-        </div>
-      </div>
+      <div class="section-label" data-i18n="prizesLabel">Prizes & Rewards</div>
+      <h2 data-i18n="prizesTitle">Win Big. Play Bold.</h2>
+      <!-- Rendered by script.js from siteData.prizes -->
+      <div class="prizes-grid" id="prizesGrid"></div>
     </div>
   </section>
 
   <!-- ===== FAQ ===== -->
   <section class="faq section alt-bg" id="faq">
     <div class="container faq-container">
-      <div class="section-label" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</div>
-      <h2 data-en="Got Questions?" data-ar="لديك أسئلة؟">Got Questions?</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-en="Who can participate?" data-ar="من يمكنه المشاركة؟">Who can participate?</span>
-            <span class="faq-arrow">↓</span>
-          </button>
-          <div class="faq-a" data-en="Anyone who loves chess! The tournament is open to all ages and skill levels." data-ar="أي شخص يحب الشطرنج! البطولة مفتوحة لجميع الأعمار والمستويات.">Anyone who loves chess! The tournament is open to all ages and skill levels.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-en="What is the registration fee?" data-ar="كم رسوم التسجيل؟">What is the registration fee?</span>
-            <span class="faq-arrow">↓</span>
-          </button>
-          <div class="faq-a" data-en="Registration fee details are provided upon sign-up. Payment is via Vodafone Cash." data-ar="تفاصيل رسوم التسجيل تُقدَّم عند التسجيل. الدفع عبر فودافون كاش.">Registration fee details are provided upon sign-up. Payment is via Vodafone Cash.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-en="Is a Chess ID mandatory?" data-ar="هل رقم الشطرنج إلزامي؟">Is a Chess ID mandatory?</span>
-            <span class="faq-arrow">↓</span>
-          </button>
-          <div class="faq-a" data-en="No, Chess ID is optional. You can still participate without one." data-ar="لا، رقم الشطرنج اختياري. يمكنك المشاركة بدونه.">No, Chess ID is optional. You can still participate without one.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            <span data-en="How will I be notified?" data-ar="كيف سيتم إخطاري؟">How will I be notified?</span>
-            <span class="faq-arrow">↓</span>
-          </button>
-          <div class="faq-a" data-en="Once registered, you'll receive a confirmation. Updates are posted on our social channels." data-ar="بعد التسجيل ستتلقى تأكيدًا. يتم نشر التحديثات على قنواتنا الاجتماعية.">Once registered, you'll receive a confirmation. Updates are posted on our social channels.</div>
-        </div>
+      <div class="section-label" data-i18n="faqLabel">FAQ</div>
+      <h2 data-i18n="faqTitle">Got Questions?</h2>
+      <!-- Rendered by script.js from siteData.faq -->
+      <div class="faq-list" id="faqList"></div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact-section section" id="contact">
+    <div class="container">
+      <div class="section-label" data-i18n="contactLabel">Get in Touch</div>
+      <h2 data-i18n="contactTitle">We'd Love to Hear from You</h2>
+      <div class="contact-grid">
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/traveller.tweet"
+           target="_blank" rel="noopener noreferrer"
+           class="contact-card contact-fb">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+              <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+            </svg>
+          </div>
+          <div class="contact-text">
+            <span class="contact-platform">Facebook</span>
+            <span class="contact-handle" data-i18n="findFacebook">Follow us on Facebook</span>
+          </div>
+          <span class="contact-arrow">→</span>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/201060789814"
+           target="_blank" rel="noopener noreferrer"
+           class="contact-card contact-wa">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+          </div>
+          <div class="contact-text">
+            <span class="contact-platform">WhatsApp</span>
+            <span class="contact-handle">+20 10 60789814</span>
+          </div>
+          <span class="contact-arrow">→</span>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:info@travTweet.com" class="contact-card contact-email">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </div>
+          <div class="contact-text">
+            <span class="contact-platform" data-i18n="emailUs">Email Us</span>
+            <span class="contact-handle">info@travTweet.com</span>
+          </div>
+          <span class="contact-arrow">→</span>
+        </a>
+
       </div>
     </div>
   </section>
@@ -213,8 +186,8 @@
   <section class="cta-banner">
     <div class="container cta-inner">
       <div class="cta-chess-piece">♚</div>
-      <h2 data-en="Your next great move starts here." data-ar="خطوتك الكبيرة القادمة تبدأ من هنا.">Your next great move starts here.</h2>
-      <a href="join.html" class="btn-primary btn-lg" data-en="Register Now →" data-ar="سجّل الآن →">Register Now →</a>
+      <h2 data-i18n="ctaTitle">Your next great move starts here.</h2>
+      <a href="join.html" class="btn-primary btn-lg" data-i18n="registerNow">Register Now →</a>
     </div>
   </section>
 
@@ -222,14 +195,20 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <img src="header-logo.jpg" alt="Traveller Tweet" class="footer-logo"/>
-      <p data-en="© 2025 Traveller Tweet. All rights reserved." data-ar="© 2025 Traveller Tweet. جميع الحقوق محفوظة.">© 2025 Traveller Tweet. All rights reserved.</p>
+      <p data-i18n="copyright">© 2025 Traveller Tweet. All rights reserved.</p>
       <p class="footer-contact">
-        <span data-en="Contact:" data-ar="تواصل:">Contact:</span>
+        <span data-i18n="contact">Contact:</span>
         <a href="mailto:info@travTweet.com">info@travTweet.com</a>
+        &nbsp;|&nbsp;
+        <a href="https://wa.me/201060789814" target="_blank" rel="noopener">WhatsApp</a>
+        &nbsp;|&nbsp;
+        <a href="https://www.facebook.com/traveller.tweet" target="_blank" rel="noopener">Facebook</a>
       </p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- ES module so we can use import/export in script.js -->
+  <script type="module" src="script.js"></script>
+
 </body>
 </html>
